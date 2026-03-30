@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ochrana osobnych udajov | Regnum Christi Slovensko</title>
+    <title>Pravne dokumenty | Regnum Christi Slovensko</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +21,7 @@
         header {
             background-color: #15365F;
             color: #ffffff;
-            padding: 2.5rem 1.5rem;
+            padding: 2.5rem 1.5rem 1.2rem;
             text-align: center;
         }
 
@@ -45,51 +45,74 @@
             line-height: 1.5;
         }
 
+        .org-info a {
+            color: #a8c4e0;
+        }
+
+        /* Sticky navigation */
+        .doc-nav-wrapper {
+            background-color: #15365F;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0 1rem 1rem;
+        }
+
+        .doc-nav {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .doc-nav button {
+            display: inline-block;
+            padding: 0.5rem 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+            color: rgba(255, 255, 255, 0.75);
+            background-color: transparent;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .doc-nav button.active {
+            background-color: #ffffff;
+            color: #15365F;
+            border-color: #ffffff;
+        }
+
+        .doc-nav button:not(.active):hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.8);
+            color: #ffffff;
+        }
+
         main {
             max-width: 780px;
             margin: 0 auto;
             padding: 2rem 1.5rem 4rem;
         }
 
-        .lang-nav {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
+        .doc-section {
+            display: none;
         }
 
-        .lang-nav a {
-            display: inline-block;
-            padding: 0.55rem 1.6rem;
-            border: 2px solid #15365F;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background-color 0.2s, color 0.2s;
-        }
-
-        .lang-nav a.active {
-            background-color: #15365F;
-            color: #ffffff;
-        }
-
-        .lang-nav a:not(.active) {
-            color: #15365F;
-            background-color: #ffffff;
-        }
-
-        .lang-nav a:hover {
-            background-color: #1a4278;
-            color: #ffffff;
+        .doc-section.active {
+            display: block;
         }
 
         .policy-section {
             background-color: #ffffff;
             border-radius: 10px;
             padding: 2.5rem 2rem;
-            margin-bottom: 2rem;
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
         }
 
@@ -128,10 +151,33 @@
             color: #1a2a3a;
         }
 
-        .divider {
-            height: 1px;
-            background: #dee2e6;
-            margin: 3rem 0;
+        .policy-section a {
+            color: #15365F;
+            text-decoration: underline;
+        }
+
+        .effective-date {
+            display: inline-block;
+            background-color: #e9ecf3;
+            color: #15365F;
+            padding: 0.35rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .doc-label {
+            display: inline-block;
+            background-color: #e9ecf3;
+            color: #15365F;
+            padding: 0.2rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         footer {
@@ -152,24 +198,22 @@
             text-decoration: underline;
         }
 
-        .effective-date {
-            display: inline-block;
-            background-color: #e9ecf3;
-            color: #15365F;
-            padding: 0.35rem 1rem;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 0.5rem;
-        }
-
         @media (max-width: 600px) {
             header {
-                padding: 1.8rem 1rem;
+                padding: 1.8rem 1rem 0.8rem;
             }
 
             header h1 {
                 font-size: 1.3rem;
+            }
+
+            .doc-nav-wrapper {
+                padding: 0 0.5rem 0.75rem;
+            }
+
+            .doc-nav button {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.75rem;
             }
 
             main {
@@ -190,188 +234,514 @@
 
 <header>
     <h1>Regnum Christi Slovensko</h1>
-    <p>Zasady ochrany osobnych udajov / Privacy Policy</p>
+    <p>Pravne dokumenty / Legal Documents</p>
     <div class="org-info">
         Obcianske zdruzenie RCSK | Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves<br>
-        ICO: 53163966 | <a href="mailto:info@regnumchristi.sk" style="color: #a8c4e0;">info@regnumchristi.sk</a>
+        ICO: 53163966 | <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>
     </div>
 </header>
 
+<nav class="doc-nav-wrapper">
+    <div class="doc-nav">
+        <button class="active" onclick="showSection('privacy-sk')">Ochrana udajov (SK)</button>
+        <button onclick="showSection('privacy-en')">Privacy Policy (EN)</button>
+        <button onclick="showSection('terms-sk')">Podmienky (SK)</button>
+        <button onclick="showSection('terms-en')">Terms (EN)</button>
+    </div>
+</nav>
+
 <main>
-    <nav class="lang-nav">
-        <a href="#sk" class="active">Slovensky</a>
-        <a href="#en">English</a>
-    </nav>
 
-    <!-- SLOVAK VERSION -->
-    <section id="sk" class="policy-section">
-        <h2>Zasady ochrany osobnych udajov</h2>
+    <!-- ============================================================ -->
+    <!-- PRIVACY POLICY — SLOVAK                                       -->
+    <!-- ============================================================ -->
+    <div id="privacy-sk" class="doc-section active">
+        <section class="policy-section">
+            <span class="doc-label">Slovenska verzia</span>
+            <h2>Zasady ochrany osobnych udajov</h2>
 
-        <p>Tieto zasady ochrany osobnych udajov sa vztahuju na aplikaciu Regnum Christi Slovensko (dalej len &bdquo;aplikacia&ldquo;) pre mobilne zariadenia, ktoru vyvinulo Obcianske zdruzenie RCSK (dalej len &bdquo;poskytovatel sluzby&ldquo;). Tato sluzba je poskytovana &bdquo;TAK, AKO JE&ldquo; ako bezplatna, nekomercna sluzba.</p>
+            <p>Tieto zasady ochrany osobnych udajov sa vztahuju na aplikaciu Regnum Christi Slovensko (dalej len &bdquo;aplikacia&ldquo;) pre mobilne zariadenia, ktoru vyvinulo Obcianske zdruzenie RCSK (dalej len &bdquo;poskytovatel sluzby&ldquo;). Tato sluzba je poskytovana &bdquo;TAK, AKO JE&ldquo; ako bezplatna, nekomercna sluzba.</p>
 
-        <h3>Identifikacia prevadzkovatela</h3>
-        <p>Prevadzkovatelom osobnych udajov je Obcianske zdruzenie RCSK, so sidlom Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves, ICO: 53163966.</p>
+            <h3>Identifikacia prevadzkovatela</h3>
+            <p>Prevadzkovatelom osobnych udajov je Obcianske zdruzenie RCSK, so sidlom Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves, ICO: 53163966.</p>
 
-        <h3>Ake informacie aplikacia ziskava a ako ich pouziva?</h3>
-        <p>Aplikacia ziskava informacie, ktore poskytnete pri stiahnutí a pouzivani aplikacie. Registracia u poskytovatela sluzby nie je povinna na pouzivanie zakladnych funkcii (Spravy, Modlitebnik, Kalendar, Galeria).</p>
-        <p>V zavislosti od pouzivanych funkcii vsak aplikacia spracuva konkretne udaje:</p>
-        <ul>
-            <li><strong>Udaje z kontaktneho formulara:</strong> Ak pouzijete kontaktny formular v aplikacii, uvediete svoje meno, e-mailovu adresu a spravu. Tieto udaje su bezpecne odovzdane a ulozene v databaze poskytovatela sluzby, aby sme mohli odpovedat na vasu ziadost.</li>
-            <li><strong>Tokeny push notifikacii:</strong> Ak sa rozhodnete prijimat vzdialene aktualizacie sprav (&bdquo;Upozornenia na novinky&ldquo;), aplikacia vygeneruje token push notifikacie cez Expo, ktory sa synchronizuje s nasou databazou na dorucenie hromadnych sprav. Tuto moznost mozete kedykolvek vypnut, co aktivne vymaze token z nasich serverov.</li>
-            <li><strong>Lokalne udaje v zariadeni:</strong> Vase vlastne modlitby, oblubene modlitby a nastavenia aplikacie (napr. velkost textu a tema) sa ukladaju vyhradne lokalne vo vasom zariadeni (AsyncStorage). Tieto udaje sa nikdy neodosielajú poskytovatelovi sluzby.</li>
-        </ul>
-        <p>Poskytovatel sluzby moze pouzit informacie, ktore ste poskytli, na kontakt s vami s cielom poskytnut dolezite informacie, povinne oznamenia alebo odpovedat na vase poziadavky podpory.</p>
+            <h3>Ake informacie aplikacia ziskava a ako ich pouziva?</h3>
+            <p>Aplikacia ziskava informacie, ktore poskytnete pri stiahnuti a pouzivani aplikacie. Registracia u poskytovatela sluzby nie je povinna na pouzivanie zakladnych funkcii (Spravy, Modlitebnik, Kalendar, Galeria).</p>
+            <p>V zavislosti od pouzivanych funkcii vsak aplikacia spracuva konkretne udaje:</p>
+            <ul>
+                <li><strong>Udaje z kontaktneho formulara:</strong> Ak pouzijete kontaktny formular v aplikacii, uvediete svoje meno, e-mailovu adresu a spravu. Tieto udaje su bezpecne odovzdane a ulozene v databaze poskytovatela sluzby, aby sme mohli odpovedat na vasu ziadost.</li>
+                <li><strong>Tokeny push notifikacii:</strong> Ak sa rozhodnete prijimat vzdialene aktualizacie sprav (&bdquo;Upozornenia na novinky&ldquo;), aplikacia vygeneruje token push notifikacie cez Expo, ktory sa synchronizuje s nasou databazou na dorucenie hromadnych sprav. Tuto moznost mozete kedykolvek vypnut, co aktivne vymaze token z nasich serverov.</li>
+                <li><strong>Lokalne udaje v zariadeni:</strong> Vase vlastne modlitby, oblubene modlitby a nastavenia aplikacie (napr. velkost textu a tema) sa ukladaju vyhradne lokalne vo vasom zariadeni (AsyncStorage). Tieto udaje sa nikdy neodosielaju poskytovatelovi sluzby.</li>
+            </ul>
+            <p>Poskytovatel sluzby moze pouzit informacie, ktore ste poskytli, na kontakt s vami s cielom poskytnut dolezite informacie, povinne oznamenia alebo odpovedat na vase poziadavky podpory.</p>
 
-        <h3>Ziskava aplikacia informacie automaticky?</h3>
-        <p>Aplikacia moze automaticky ziskavat urcite minimalne informacie, vratane typu mobilneho zariadenia, ktore pouzivate, vasho mobilneho operacneho systemu a zaznamov o padoch aplikacie (crash logs), aby nam pomohli zlepsit stabilitu.</p>
+            <h3>Ziskava aplikacia informacie automaticky?</h3>
+            <p>Aplikacia moze automaticky ziskavat urcite minimalne informacie, vratane typu mobilneho zariadenia, ktore pouzivate, vasho mobilneho operacneho systemu a zaznamov o padoch aplikacie (crash logs), aby nam pomohli zlepsit stabilitu.</p>
 
-        <h3>Ziskava aplikacia presne informacie o polohe zariadenia v realnom case?</h3>
-        <p>Nie. Tato aplikacia nezhromazduje presne informacie o polohe vasho mobilneho zariadenia.</p>
+            <h3>Ziskava aplikacia presne informacie o polohe zariadenia v realnom case?</h3>
+            <p>Nie. Tato aplikacia nezhromazduje presne informacie o polohe vasho mobilneho zariadenia.</p>
 
-        <h3>Pouziva aplikacia technologie umelej inteligencie (AI)?</h3>
-        <p>Nie. Aplikacia nepouziva technologie umelej inteligencie (AI) na spracuvanie vasich udajov ani na poskytovanie funkcii.</p>
+            <h3>Pouziva aplikacia technologie umelej inteligencie (AI)?</h3>
+            <p>Nie. Aplikacia nepouziva technologie umelej inteligencie (AI) na spracuvanie vasich udajov ani na poskytovanie funkcii.</p>
 
-        <h3>Maju tretie strany pristup k informaciam ziskanym aplikaciou?</h3>
-        <p>Vase informacie zdielame s tretimi stranami iba sposobmi uvedenymi v tomto vyhlaseni o ochrane osobnych udajov. Aplikacia vyuziva konkretnych poskytovatelov infrastruktury tretich stran, ktori vystupuju ako sprostredkovatelia spracuvania:</p>
-        <ul>
-            <li><strong>Expo:</strong> Umoznuje funkcnost aplikacie a dorucovanie push notifikacii.</li>
-            <li><strong>Supabase:</strong> Sluzi ako nasa bezpecna backendova databaza pre spravy z kontaktneho formulara a tokeny push notifikacii.</li>
-            <li><strong>Google Calendar / Cloudflare / WordPress:</strong> Pouzivaju sa vyhradne na nacitanie verejnych udajov len na citanie (udalosti, obrazky a clanky) zobrazenych v aplikacii.</li>
-        </ul>
-        <p>Poskytovatel sluzby moze spristupnit informacie poskytnute pouzivatelmi a informacie ziskane automaticky:</p>
-        <ul>
-            <li>ak to vyzaduje zakon, napriklad na splnenie povinnosti voci sudnemu predvolaniu alebo podobnemu pravnemu procesu;</li>
-            <li>ked v dobrej viere usudime, ze spristupnenie je nevyhnutne na ochranu nasich prav, ochranu vasej bezpecnosti alebo bezpecnosti inych, vysetrovanie podvodov alebo odpoved na ziadost statnych organov;</li>
-            <li>nasim doveryhodnym poskytovatelom sluzieb, ktori pracuju v nasom mene, nemaju samostatne vyuzitie informacii, ktore im spristupnime, a suhlasili s dodrziavanim pravidiel uvedenych v tomto vyhlaseni o ochrane osobnych udajov.</li>
-        </ul>
+            <h3>Maju tretie strany pristup k informaciam ziskanym aplikaciou?</h3>
+            <p>Vase informacie zdielame s tretimi stranami iba sposobmi uvedenymi v tomto vyhlaseni o ochrane osobnych udajov. Aplikacia vyuziva konkretnych poskytovatelov infrastruktury tretich stran, ktori vystupuju ako sprostredkovatelia spracuvania:</p>
+            <ul>
+                <li><strong>Expo:</strong> Umoznuje funkcnost aplikacie a dorucovanie push notifikacii.</li>
+                <li><strong>Supabase:</strong> Sluzi ako nasa bezpecna backendova databaza pre spravy z kontaktneho formulara a tokeny push notifikacii.</li>
+                <li><strong>Google Calendar / Cloudflare / WordPress:</strong> Pouzivaju sa vyhradne na nacitanie verejnych udajov len na citanie (udalosti, obrazky a clanky) zobrazenych v aplikacii.</li>
+            </ul>
+            <p>Poskytovatel sluzby moze spristupnit informacie poskytnute pouzivatelmi a informacie ziskane automaticky:</p>
+            <ul>
+                <li>ak to vyzaduje zakon, napriklad na splnenie povinnosti voci sudnemu predvolaniu alebo podobnemu pravnemu procesu;</li>
+                <li>ked v dobrej viere usudime, ze spristupnenie je nevyhnutne na ochranu nasich prav, ochranu vasej bezpecnosti alebo bezpecnosti inych, vysetrovanie podvodov alebo odpoved na ziadost statnych organov;</li>
+                <li>nasim doveryhodnym poskytovatelom sluzieb, ktori pracuju v nasom mene, nemaju samostatne vyuzitie informacii, ktore im spristupnime, a suhlasili s dodrziavanim pravidiel uvedenych v tomto vyhlaseni o ochrane osobnych udajov.</li>
+            </ul>
 
-        <h3>Ake mam pravo na odhlasenie?</h3>
-        <p>Zber vsetkych informacii aplikaciou mozete jednoducho zastavit odinštalovanim aplikacie standardnym postupom pre vase zariadenie. Mozete tiez okamzite zrusit suhlas s push notifikaciami ich vypnutim na karte &bdquo;Nastavenia&ldquo;, co natrvalo vymaze vas token z nasich serverov.</p>
+            <h3>Ake mam pravo na odhlasenie?</h3>
+            <p>Zber vsetkych informacii aplikaciou mozete jednoducho zastavit odinstalovanimaplikacie standardnym postupom pre vase zariadenie. Mozete tiez okamzite zrusit suhlas s push notifikaciami ich vypnutim na karte &bdquo;Nastavenia&ldquo;, co natrvalo vymaze vas token z nasich serverov.</p>
 
-        <h3>Aka je politika uchovavania udajov a ako mozete spravovat svoje informacie?</h3>
-        <p>Osobne udaje uchovavame len po dobu nevyhnutnu na splnenie ucelov opisanych v tychto zasadach ochrany osobnych udajov. Konkretne:</p>
-        <ul>
-            <li><strong>Udaje z kontaktneho formulara:</strong> zvycajne nie dlhsie ako 12 mesiacov po vybaveni vasej ziadosti.</li>
-            <li><strong>Technicke zaznamy</strong> (vratane zaznamov o padoch aplikacie a suvisiacich logov): najviac 30 dni na ucely bezpecnosti a odstranovania chyb.</li>
-            <li><strong>Tokeny push notifikacii:</strong> len pocas toho, ako zostavate prihlaseni na ich prijem; po vypnuti upozorneni v aplikacii sa token z nasich serverov vymaze.</li>
-        </ul>
-        <p>Ak chcete, aby poskytovatel sluzby vymazal akekolvek pouzivatelom poskytnute udaje, ktore ste odoslali prostrednictvom aplikacie, kontaktujte nas na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> a odpovieme v primeranej lehote.</p>
+            <h3>Aka je politika uchovavania udajov a ako mozete spravovat svoje informacie?</h3>
+            <p>Osobne udaje uchovavame len po dobu nevyhnutnu na splnenie ucelov opisanych v tychto zasadach ochrany osobnych udajov. Konkretne:</p>
+            <ul>
+                <li><strong>Udaje z kontaktneho formulara:</strong> zvycajne nie dlhsie ako 12 mesiacov po vybaveni vasej ziadosti.</li>
+                <li><strong>Technicke zaznamy</strong> (vratane zaznamov o padoch aplikacie a suvisiacich logov): najviac 30 dni na ucely bezpecnosti a odstranovania chyb.</li>
+                <li><strong>Tokeny push notifikacii:</strong> len pocas toho, ako zostavate prihlaseni na ich prijem; po vypnuti upozorneni v aplikacii sa token z nasich serverov vymaze.</li>
+            </ul>
+            <p>Ak chcete, aby poskytovatel sluzby vymazal akekolvek pouzivatelom poskytnute udaje, ktore ste odoslali prostrednictvom aplikacie, kontaktujte nas na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> a odpovieme v primeranej lehote.</p>
 
-        <h3>Sulad s GDPR a vase prava na ochranu osobnych udajov (Zakon c. 18/2018 Z. z.)</h3>
-        <p>Kedze poskytovatel sluzby posobi na Slovensku, vase udaje su chranene vseobecnym nariadenim o ochrane udajov (GDPR) a zakonom c. 18/2018 Z. z. o ochrane osobnych udajov v zneni neskorsich predpisov. Mate pravo na:</p>
-        <ul>
-            <li><strong>Pristup:</strong> Poziadat o kopiu vasich osobnych udajov.</li>
-            <li><strong>Opravu:</strong> Poziadat o opravu nepresnych osobnych udajov.</li>
-            <li><strong>Vymazanie:</strong> Poziadat o vymazanie vasich osobnych udajov (&bdquo;pravo byt zabudnuty&ldquo;).</li>
-            <li><strong>Obmedzenie a namietku:</strong> Obmedzit alebo namietat proti sposobu, akym spracuvame vase udaje.</li>
-        </ul>
-        <p>Na uplatnenie tychto prav napiste na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>. Mate tiez pravo podat staznost na Urad na ochranu osobnych udajov SR.</p>
+            <h3>Sulad s GDPR a vase prava na ochranu osobnych udajov (Zakon c. 18/2018 Z. z.)</h3>
+            <p>Kedze poskytovatel sluzby posobi na Slovensku, vase udaje su chranene vseobecnym nariadenim o ochrane udajov (GDPR) a zakonom c. 18/2018 Z. z. o ochrane osobnych udajov v zneni neskorsich predpisov. Mate pravo na:</p>
+            <ul>
+                <li><strong>Pristup:</strong> Poziadat o kopiu vasich osobnych udajov.</li>
+                <li><strong>Opravu:</strong> Poziadat o opravu nepresnych osobnych udajov.</li>
+                <li><strong>Vymazanie:</strong> Poziadat o vymazanie vasich osobnych udajov (&bdquo;pravo byt zabudnuty&ldquo;).</li>
+                <li><strong>Obmedzenie a namietku:</strong> Obmedzit alebo namietat proti sposobu, akym spracuvame vase udaje.</li>
+            </ul>
+            <p>Na uplatnenie tychto prav napiste na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>. Mate tiez pravo podat staznost na Urad na ochranu osobnych udajov SR.</p>
 
-        <h3>Ako aplikacia pristupuje k ochrane osobnych udajov mladsich pouzivatelov?</h3>
-        <p>Aplikacia Regnum Christi Slovensko je urcena pre cele spolocenstvo Regnum Christi na Slovensku, vratane deti a mladych ludi. Funkcie ako Modlitebnik, pripomienky udalosti v kalendari a Galeria su zamerne pristupne aj mladsim clenom nasho spolocenstva.</p>
-        <p>Aplikacia zhromazduje minimalne osobne udaje (pozri vyssie). Poskytovatel sluzby nezhromazduje vedome osobne udaje specificky od deti. Kontaktny formular a suhlas s push notifikaciami su jedine funkcie, ktore odosielajú udaje na nase servery; akekolvek osobne udaje zadane prostrednictvom aplikacie by mali byt poskytnute so vedomim rodica alebo zakonneho zastupcu tam, kde je to na mieste.</p>
-        <p>Bezpecnost a blaho vsetkych clenov spolocenstva, vratane maloletych, upravuje nasa Politika ochrany (Safeguarding Policy), ktora je dostupna priamo v aplikacii v sekcii FAQ. Odporucame vsetkym rodicom a zakonnym zastupcom, aby si ju precitali.</p>
-        <p>Ak ma rodic alebo zakonny zastupca obavy o spracuvanie udajov svojho dietata, kontaktujte nas na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
+            <h3>Ako aplikacia pristupuje k ochrane osobnych udajov mladsich pouzivatelov?</h3>
+            <p>Aplikacia Regnum Christi Slovensko je urcena pre cele spolocenstvo Regnum Christi na Slovensku, vratane deti a mladych ludi. Funkcie ako Modlitebnik, pripomienky udalosti v kalendari a Galeria su zamerne pristupne aj mladsim clenom nasho spolocenstva.</p>
+            <p>Aplikacia zhromazduje minimalne osobne udaje (pozri vyssie). Poskytovatel sluzby nezhromazduje vedome osobne udaje specificky od deti. Kontaktny formular a suhlas s push notifikaciami su jedine funkcie, ktore odosielaju udaje na nase servery; akekolvek osobne udaje zadane prostrednictvom aplikacie by mali byt poskytnute so vedomim rodica alebo zakonneho zastupcu tam, kde je to na mieste.</p>
+            <p>Bezpecnost a blaho vsetkych clenov spolocenstva, vratane maloletych, upravuje nasa Politika ochrany (Safeguarding Policy), ktora je dostupna priamo v aplikacii v sekcii FAQ. Odporucame vsetkym rodicom a zakonnym zastupcom, aby si ju precitali.</p>
+            <p>Ak ma rodic alebo zakonny zastupca obavy o spracuvanie udajov svojho dietata, kontaktujte nas na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
 
-        <h3>Ako su vase informacie zabezpecene?</h3>
-        <p>Poskytovatel sluzby zabezpecuje fyzicke, elektronicke a procesne zaruky (vratane Row Level Security v nasich databazach a sifrovanych pripojeni API) na ochranu informacii, ktore spracuvame a uchovavame. Pristup k tymto informaciam obmedzujeme vyhradne na opravneny personal, ktory ich potrebuje na prevadzku alebo zlepsovanie aplikacie.</p>
+            <h3>Ako su vase informacie zabezpecene?</h3>
+            <p>Poskytovatel sluzby zabezpecuje fyzicke, elektronicke a procesne zaruky (vratane Row Level Security v nasich databazach a sifrovanych pripojeni API) na ochranu informacii, ktore spracuvame a uchovavame. Pristup k tymto informaciam obmedzujeme vyhradne na opravneny personal, ktory ich potrebuje na prevadzku alebo zlepsovanie aplikacie.</p>
 
-        <h3>Ako budete informovani o zmenach tychto zasad ochrany osobnych udajov?</h3>
-        <p>Tieto zasady ochrany osobnych udajov mozu byt z casu na cas aktualizovane. Poskytovatel sluzby vas o zmenach informuje aktualizaciou tejto stranky. Odporucame vam pravidelne si tieto zasady ochrany osobnych udajov precitat kvoli pripadnym zmenam.</p>
-        <p><span class="effective-date">Datum ucinnosti: 28. marec 2026</span></p>
+            <h3>Ako budete informovani o zmenach tychto zasad ochrany osobnych udajov?</h3>
+            <p>Tieto zasady ochrany osobnych udajov mozu byt z casu na cas aktualizovane. Poskytovatel sluzby vas o zmenach informuje aktualizaciou tejto stranky. Odporucame vam pravidelne si tieto zasady ochrany osobnych udajov precitat kvoli pripadnym zmenam.</p>
+            <p><span class="effective-date">Datum ucinnosti: 28. marec 2026</span></p>
 
-        <h3>Ako vyjadrujete suhlas?</h3>
-        <p>Pouzivanim aplikacie vyjadrujete suhlas s tym, aby poskytovatel sluzby spracuval vase informacie v sulade s tymito zasadami ochrany osobnych udajov. &bdquo;Spracuvanie&ldquo; zahrna pouzivanie lokalneho uloziska zariadenia alebo zhromazdovanie, ukladanie, mazanie, pouzivanie, kombinovanie a spristupnovanie informacii.</p>
+            <h3>Ako vyjadrujete suhlas?</h3>
+            <p>Pouzivanim aplikacie vyjadrujete suhlas s tym, aby poskytovatel sluzby spracuval vase informacie v sulade s tymito zasadami ochrany osobnych udajov. &bdquo;Spracuvanie&ldquo; zahrna pouzivanie lokalneho uloziska zariadenia alebo zhromazdovanie, ukladanie, mazanie, pouzivanie, kombinovanie a spristupnovanie informacii.</p>
 
-        <h3>Ako nas mozete kontaktovat?</h3>
-        <p>Ak mate akekolvek otazky tykajuce sa ochrany osobnych udajov pri pouzivani aplikacie, kontaktujte poskytovatela sluzby e-mailom na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
-    </section>
+            <h3>Ako nas mozete kontaktovat?</h3>
+            <p>Ak mate akekolvek otazky tykajuce sa ochrany osobnych udajov pri pouzivani aplikacie, kontaktujte poskytovatela sluzby e-mailom na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
+        </section>
+    </div>
 
-    <div class="divider"></div>
+    <!-- ============================================================ -->
+    <!-- PRIVACY POLICY — ENGLISH                                      -->
+    <!-- ============================================================ -->
+    <div id="privacy-en" class="doc-section">
+        <section class="policy-section">
+            <span class="doc-label">English version</span>
+            <h2>Privacy Policy</h2>
 
-    <!-- ENGLISH VERSION -->
-    <section id="en" class="policy-section">
-        <h2>Privacy Policy</h2>
+            <p>This privacy policy is applicable to the Regnum Christi Slovensko app (hereinafter referred to as the &ldquo;Application&rdquo;) for mobile devices, which was developed by Obcianske zdruzenie RCSK (hereinafter referred to as the &ldquo;Service Provider&rdquo;). This service is provided &ldquo;AS IS&rdquo; as a free, non-commercial service.</p>
 
-        <p>This privacy policy is applicable to the Regnum Christi Slovensko app (hereinafter referred to as the "Application") for mobile devices, which was developed by Obcianske zdruzenie RCSK (hereinafter referred to as the "Service Provider"). This service is provided "AS IS" as a free, non-commercial service.</p>
+            <h3>Identification of the data controller</h3>
+            <p>The controller of your personal data is Obcianske zdruzenie RCSK, with its registered office at Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves, Slovakia, identification number (ICO): 53163966.</p>
 
-        <h3>Identification of the data controller</h3>
-        <p>The controller of your personal data is Obcianske zdruzenie RCSK, with its registered office at Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves, Slovakia, identification number (ICO): 53163966.</p>
+            <h3>What information does the Application obtain and how is it used?</h3>
+            <p>The Application acquires the information you supply when you download and use the Application. Registration with the Service Provider is not mandatory to use the core features (News, Prayerbook, Calendar, Gallery).</p>
+            <p>However, depending on the features you use, the Application processes specific data:</p>
+            <ul>
+                <li><strong>Contact form data:</strong> If you use the in-app contact form, you provide your name, email address, and message. This data is securely transmitted to and stored in the Service Provider's database so we can respond to your inquiry.</li>
+                <li><strong>Push notification tokens:</strong> If you opt in to receive remote news updates (&ldquo;Upozornenia na novinky&rdquo;), the Application generates a push notification token via Expo, which is synced to our database to deliver broadcast messages. You can toggle this off at any time, which actively deletes the token from our servers.</li>
+                <li><strong>Local on-device data:</strong> Your custom prayers, favorite prayers, and app settings (such as text size and theme) are saved strictly locally on your device (AsyncStorage). This data is never transmitted to the Service Provider.</li>
+            </ul>
+            <p>The Service Provider may use the information you provided to contact you to provide important information, required notices, or respond to your support requests.</p>
 
-        <h3>What information does the Application obtain and how is it used?</h3>
-        <p>The Application acquires the information you supply when you download and use the Application. Registration with the Service Provider is not mandatory to use the core features (News, Prayerbook, Calendar, Gallery).</p>
-        <p>However, depending on the features you use, the Application processes specific data:</p>
-        <ul>
-            <li><strong>Contact form data:</strong> If you use the in-app contact form, you provide your name, email address, and message. This data is securely transmitted to and stored in the Service Provider's database so we can respond to your inquiry.</li>
-            <li><strong>Push notification tokens:</strong> If you opt in to receive remote news updates ("Upozornenia na novinky"), the Application generates a push notification token via Expo, which is synced to our database to deliver broadcast messages. You can toggle this off at any time, which actively deletes the token from our servers.</li>
-            <li><strong>Local on-device data:</strong> Your custom prayers, favorite prayers, and app settings (such as text size and theme) are saved strictly locally on your device (AsyncStorage). This data is never transmitted to the Service Provider.</li>
-        </ul>
-        <p>The Service Provider may use the information you provided to contact you to provide important information, required notices, or respond to your support requests.</p>
+            <h3>What information does the Application collect automatically?</h3>
+            <p>The Application may collect certain minimal information automatically, including the type of mobile device you use, your mobile operating system, and crash logs to help us improve stability.</p>
 
-        <h3>What information does the Application collect automatically?</h3>
-        <p>The Application may collect certain minimal information automatically, including the type of mobile device you use, your mobile operating system, and crash logs to help us improve stability.</p>
+            <h3>Does the Application collect precise real-time location information of the device?</h3>
+            <p>No. This Application does not gather precise information about the location of your mobile device.</p>
 
-        <h3>Does the Application collect precise real-time location information of the device?</h3>
-        <p>No. This Application does not gather precise information about the location of your mobile device.</p>
+            <h3>Does the Application use Artificial Intelligence (AI) technologies?</h3>
+            <p>No. The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
 
-        <h3>Does the Application use Artificial Intelligence (AI) technologies?</h3>
-        <p>No. The Application does not use Artificial Intelligence (AI) technologies to process your data or provide features.</p>
+            <h3>Do third parties see and/or have access to information obtained by the Application?</h3>
+            <p>We only share your information with third parties in the ways described in this privacy statement. The Application utilizes specific third-party infrastructure providers that act as data processors:</p>
+            <ul>
+                <li><strong>Expo:</strong> Facilitates app functionality and push notification delivery.</li>
+                <li><strong>Supabase:</strong> Acts as our secure backend database for contact messages and push notification tokens.</li>
+                <li><strong>Google Calendar / Cloudflare / WordPress:</strong> Used solely to fetch public read-only data (events, images, and news articles) displayed in the app.</li>
+            </ul>
+            <p>The Service Provider may disclose user-provided and automatically collected information:</p>
+            <ul>
+                <li>as required by law, such as to comply with a subpoena or similar legal process;</li>
+                <li>when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
+                <li>with our trusted service providers who work on our behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
+            </ul>
 
-        <h3>Do third parties see and/or have access to information obtained by the Application?</h3>
-        <p>We only share your information with third parties in the ways described in this privacy statement. The Application utilizes specific third-party infrastructure providers that act as data processors:</p>
-        <ul>
-            <li><strong>Expo:</strong> Facilitates app functionality and push notification delivery.</li>
-            <li><strong>Supabase:</strong> Acts as our secure backend database for contact messages and push notification tokens.</li>
-            <li><strong>Google Calendar / Cloudflare / WordPress:</strong> Used solely to fetch public read-only data (events, images, and news articles) displayed in the app.</li>
-        </ul>
-        <p>The Service Provider may disclose user-provided and automatically collected information:</p>
-        <ul>
-            <li>as required by law, such as to comply with a subpoena or similar legal process;</li>
-            <li>when we believe in good faith that disclosure is necessary to protect our rights, protect your safety or the safety of others, investigate fraud, or respond to a government request;</li>
-            <li>with our trusted service providers who work on our behalf, do not have an independent use of the information we disclose to them, and have agreed to adhere to the rules set forth in this privacy statement.</li>
-        </ul>
+            <h3>What are my opt-out rights?</h3>
+            <p>You can halt all collection of information by the Application easily by uninstalling the Application using the standard uninstall processes for your device. You can also instantly opt out of push notifications by disabling them in the &ldquo;Settings&rdquo; tab, which permanently deletes your token from our servers.</p>
 
-        <h3>What are my opt-out rights?</h3>
-        <p>You can halt all collection of information by the Application easily by uninstalling the Application using the standard uninstall processes for your device. You can also instantly opt out of push notifications by disabling them in the "Settings" tab, which permanently deletes your token from our servers.</p>
+            <h3>What is the data retention policy and how can you manage your information?</h3>
+            <p>We retain personal data only for as long as necessary to fulfill the purposes described in this Privacy Policy. Specifically:</p>
+            <ul>
+                <li><strong>Contact form data</strong> is typically retained for no longer than <strong>12 months</strong> after the inquiry is resolved.</li>
+                <li><strong>Technical records</strong> (including crash logs and related server logs) may be retained for up to <strong>30 days</strong> for security and debugging purposes.</li>
+                <li><strong>Push notification tokens</strong> are retained only while you remain opted in to receive them; when you disable notifications in the app, your token is deleted from our servers.</li>
+            </ul>
+            <p>If you would like the Service Provider to delete any user-provided data you have submitted via the Application, please contact us at <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> and we will respond within a reasonable timeframe.</p>
 
-        <h3>What is the data retention policy and how can you manage your information?</h3>
-        <p>We retain personal data only for as long as necessary to fulfill the purposes described in this Privacy Policy. Specifically:</p>
-        <ul>
-            <li><strong>Contact form data</strong> is typically retained for no longer than <strong>12 months</strong> after the inquiry is resolved.</li>
-            <li><strong>Technical records</strong> (including crash logs and related server logs) may be retained for up to <strong>30 days</strong> for security and debugging purposes.</li>
-            <li><strong>Push notification tokens</strong> are retained only while you remain opted in to receive them; when you disable notifications in the app, your token is deleted from our servers.</li>
-        </ul>
-        <p>If you would like the Service Provider to delete any user-provided data you have submitted via the Application, please contact us at <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> and we will respond within a reasonable timeframe.</p>
+            <h3>GDPR compliance and your privacy rights (Act No. 18/2018 Coll.)</h3>
+            <p>Because the Service Provider operates in Slovakia, your data is protected under the General Data Protection Regulation (GDPR) and the Slovak Act No. 18/2018 Coll. on the Protection of Personal Data. You have the right to:</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data.</li>
+                <li><strong>Rectification:</strong> Request correction of inaccurate personal data.</li>
+                <li><strong>Erasure:</strong> Request the deletion of your personal data (&ldquo;right to be forgotten&rdquo;).</li>
+                <li><strong>Restriction &amp; objection:</strong> Limit or object to how we process your data.</li>
+            </ul>
+            <p>To exercise these rights, email <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>. You also have the right to lodge a complaint with the Office for Personal Data Protection of the Slovak Republic (Urad na ochranu osobnych udajov SR).</p>
 
-        <h3>GDPR compliance and your privacy rights (Act No. 18/2018 Coll.)</h3>
-        <p>Because the Service Provider operates in Slovakia, your data is protected under the General Data Protection Regulation (GDPR) and the Slovak Act No. 18/2018 Coll. on the Protection of Personal Data. You have the right to:</p>
-        <ul>
-            <li><strong>Access:</strong> Request a copy of your personal data.</li>
-            <li><strong>Rectification:</strong> Request correction of inaccurate personal data.</li>
-            <li><strong>Erasure:</strong> Request the deletion of your personal data ("right to be forgotten").</li>
-            <li><strong>Restriction & objection:</strong> Limit or object to how we process your data.</li>
-        </ul>
-        <p>To exercise these rights, email <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>. You also have the right to lodge a complaint with the Office for Personal Data Protection of the Slovak Republic (Urad na ochranu osobnych udajov SR).</p>
+            <h3>How does the Application address the privacy of younger users?</h3>
+            <p>The Regnum Christi Slovensko app is designed for the entire Regnum Christi community in Slovakia, including children and young people. Features such as the Prayerbook, Calendar event reminders, and the Gallery are intentionally accessible to younger members of our community.</p>
+            <p>The Application collects minimal personal data (see above). The Service Provider does not knowingly collect personal data specifically from children. The contact form and push notification opt-in are the only features that transmit personal data to our servers; any personal data submitted through the Application should be provided with a parent or legal guardian's awareness where applicable.</p>
+            <p>The safety and well-being of all community members, including minors, is governed by our Safeguarding Policy, which is available directly within the app in the FAQ section. We encourage all parents and guardians to read it.</p>
+            <p>If a parent or guardian has any concerns about how their child's data is handled, please contact us at <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
 
-        <h3>How does the Application address the privacy of younger users?</h3>
-        <p>The Regnum Christi Slovensko app is designed for the entire Regnum Christi community in Slovakia, including children and young people. Features such as the Prayerbook, Calendar event reminders, and the Gallery are intentionally accessible to younger members of our community.</p>
-        <p>The Application collects minimal personal data (see above). The Service Provider does not knowingly collect personal data specifically from children. The contact form and push notification opt-in are the only features that transmit personal data to our servers; any personal data submitted through the Application should be provided with a parent or legal guardian's awareness where applicable.</p>
-        <p>The safety and well-being of all community members, including minors, is governed by our Safeguarding Policy, which is available directly within the app in the FAQ section. We encourage all parents and guardians to read it.</p>
-        <p>If a parent or guardian has any concerns about how their child's data is handled, please contact us at <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
+            <h3>How is your information kept secure?</h3>
+            <p>The Service Provider provides physical, electronic, and procedural safeguards (including Row Level Security on our databases and encrypted API connections) to protect information we process and maintain. We limit access to this information strictly to authorized personnel who need to know it to operate or improve the Application.</p>
 
-        <h3>How is your information kept secure?</h3>
-        <p>The Service Provider provides physical, electronic, and procedural safeguards (including Row Level Security on our databases and encrypted API connections) to protect information we process and maintain. We limit access to this information strictly to authorized personnel who need to know it to operate or improve the Application.</p>
+            <h3>How will you be informed of changes to this Privacy Policy?</h3>
+            <p>This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this page. You are advised to consult this Privacy Policy regularly for any changes.</p>
+            <p><span class="effective-date">Effective date: March 28, 2026</span></p>
 
-        <h3>How will you be informed of changes to this Privacy Policy?</h3>
-        <p>This Privacy Policy may be updated from time to time. The Service Provider will notify you of any changes by updating this page. You are advised to consult this Privacy Policy regularly for any changes.</p>
-        <p><span class="effective-date">Effective date: March 28, 2026</span></p>
+            <h3>How do you give your consent?</h3>
+            <p>By using the Application, you consent to the Service Provider processing your information as set forth in this Privacy Policy. &ldquo;Processing&rdquo; includes using local device storage or collecting, storing, deleting, using, combining, and disclosing information.</p>
 
-        <h3>How do you give your consent?</h3>
-        <p>By using the Application, you consent to the Service Provider processing your information as set forth in this Privacy Policy. "Processing" includes using local device storage or collecting, storing, deleting, using, combining, and disclosing information.</p>
+            <h3>How can you contact us?</h3>
+            <p>If you have any questions regarding privacy while using the Application, please contact the Service Provider via email at <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
+        </section>
+    </div>
 
-        <h3>How can you contact us?</h3>
-        <p>If you have any questions regarding privacy while using the Application, please contact the Service Provider via email at <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>.</p>
-    </section>
+    <!-- ============================================================ -->
+    <!-- TERMS AND CONDITIONS — SLOVAK                                 -->
+    <!-- ============================================================ -->
+    <div id="terms-sk" class="doc-section">
+        <section class="policy-section">
+            <span class="doc-label">Slovenska verzia</span>
+            <h2>Podmienky pouzivania</h2>
+
+            <p>Tieto podmienky pouzivania sa vztahuju na aplikaciu Regnum Christi Slovensko (dalej len &bdquo;aplikacia&ldquo;) pre mobilne zariadenia, ktoru vyvinulo Obcianske zdruzenie RCSK (dalej len &bdquo;poskytovatel sluzby&ldquo;). Tato sluzba je poskytovana &bdquo;TAK, AKO JE&ldquo; ako bezplatna, nekomercna sluzba.</p>
+
+            <h3>Identifikacia poskytovatela sluzby</h3>
+            <p>Obcianske zdruzenie RCSK, so sidlom Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves, ICO: 53163966.</p>
+
+            <h3>Suhlas s podmienkami</h3>
+            <p>Stiahnutim alebo pouzivanim aplikacie automaticky suhlasitte s tymito podmienkami pouzivania. Dorazne odporucame, aby ste si pred pouzivanim aplikacie tieto podmienky v celosti precitali a pochopili. Ak s tymito podmienkami nesuhlasitte, aplikaciu nepouzivajte.</p>
+            <p>Tieto podmienky pouzivania by ste mali citat spolu s nasimi Zasadami ochrany osobnych udajov, ktore upravuju spracuvanie vasich osobnych udajov a su dostupne v aplikacii a na nasej webovej stranke.</p>
+
+            <h3>Prava dusevneho vlastnictva</h3>
+            <p>Vsetky prava dusevneho vlastnictva, vratane ochranych znamok, autorskych prav, prav k databazam a dalsieho vlastnickeho obsahu suvisiaceho s aplikaciou, zostavaju vyhradnym vlastnictvom poskytovatela sluzby.</p>
+            <p>Suhlasitte s tym, ze:</p>
+            <ul>
+                <li>Neopravnene kopirovanie, upravy alebo redistribucia aplikacie alebo jej akejkolvek casti je prisne zakazana</li>
+                <li>Nesmiete extrahovat, vykonavat reverznu inziniering ani sa pokusat ziskat zdrojovy kod aplikacie</li>
+                <li>Nesmiete aplikaciu prekladat do inych jazykov ani vytvarat odvodene verzie bez vyslovneho pisomneho povolenia</li>
+                <li>Nesmiete pouzivat ochranne znamky, loga alebo branding aplikacie akymkolvek sposobom bez predchadzajuceho suhlasu</li>
+            </ul>
+            <p>Porusenie tychto prav dusevneho vlastnictva moze viest k pravnym krokom a okamzitemu ukonceniu vasho pristupu k aplikacii.</p>
+
+            <h3>Pripustne pouzivanie</h3>
+            <p>Suhlasitte s tym, ze budete aplikaciu pouzivat vyhradne na zakonne ucely a v sulade s tymito podmienkami pouzivania. Konkretne suhlasitte s tym, ze nebudete:</p>
+            <ul>
+                <li>pouzivat aplikaciu sposobom, ktory porusuje platne zakony alebo predpisy</li>
+                <li>konat sposobom, ktory obmedzuje alebo brani komukolvek v pouzivani alebo uzivani aplikacie</li>
+                <li>pokusat sa ziskat neopravneny pristup k aplikacii alebo suvisiacim systemom</li>
+                <li>pouzivat aplikaciu na prenos akehokolvek urazliveho, ohovarajuceho, obscenneho alebo inak nevhodneho materialu</li>
+                <li>zasahovat do normalnej prevadzky aplikacie alebo jej suvisiacich sluzieb alebo ju narusovat</li>
+            </ul>
+
+            <h3>Upravy sluzby a dostupnost</h3>
+            <p>Poskytovatel sluzby sa zavazuje nepretrzite zlepsovat aplikaciu a vyhradzuje si pravo:</p>
+            <ul>
+                <li>kedykolvek bez predchadzajuceho upozornenia menit funkcie, funkcnost alebo obsah aplikacie</li>
+                <li>docasne pozastavit aplikaciu z dovodu udrzby, aktualizacii alebo bezpecnosti</li>
+                <li>v buducnosti zaviest platene sluzby alebo dalsie funkcie (akekolvek zmeny cien budu vopred jasne oznamene)</li>
+                <li>uplne prestat poskytovat aplikaciu, s predchadzajucim upozornenim alebo bez neho</li>
+            </ul>
+            <p>Pouzivanim aplikacie suhlasitte s prijatim vsetkych aktualizacii, ked su ponuknute. Aktualizovane verzie mozu byt nevyhnutne na dalsiu kompatibilitu s operacnym systemom vasho zariadenia.</p>
+
+            <h3>Bezpecnost zariadenia a zodpovednost pouzivatela</h3>
+            <p>Aplikacia vyzaduje:</p>
+            <ul>
+                <li>kompatibilne mobilne zariadenie s iOS alebo Androidom</li>
+                <li>aktivne pripojenie na internet (Wi-Fi alebo mobilne data)</li>
+            </ul>
+            <p>Suhlasitte s tym, ze budete:</p>
+            <ul>
+                <li>udrzovat bezpecnost a dovernost pristupu k vasmu zariadeniu</li>
+                <li>nejailbreakovat ani nerootovat svoje zariadenie, co zahrna odstranenie softverovych obmedzeni ustanovenych oficialnym operacnym systemom. Take kroky mozu vystavit vase zariadenie malveru, virusom a skodlivym programom, ohrozit bezpecnostne funkcie a zabranit spravnej funkcnosti aplikacie</li>
+                <li>udrzovat softver zariadenia aktualizovany</li>
+                <li>udrzovat dostatocnu uroven nabitia baterie zariadenia na pouzivanie aplikacie</li>
+                <li>prevziat zodpovednost za akekolvek poplatky vasho mobilneho operatora za spotrebu dat</li>
+            </ul>
+            <p>Poskytovatel sluzby nezodpoveda za:</p>
+            <ul>
+                <li>to, ze aplikacia nefunguje na plny vykon z dovodu nedostatku pripojenia na internet alebo vycerpanej datovej kvoty</li>
+                <li>poplatky mobilneho operatora za spotrebu dat, roaming alebo ine naklady suvisiace s operatorom</li>
+                <li>vybitie baterie alebo poruchu zariadenia</li>
+                <li>poplatky alebo platby tretich stran suvisiace s pouzivanim aplikacie</li>
+            </ul>
+            <p>Ak nie ste drzitelom uctu pre svoje zariadenie, potvrdzujete, ze ste od drzitela uctu ziskali povolenie na pouzivanie aplikacie.</p>
+
+            <h3>Sluzby a obsah tretich stran</h3>
+            <p>Aplikacia vyuziva poskytovatelov infrastruktury tretich stran, ktori vystupuju ako sprostredkovatelia spracuvania. Medzi nich patria:</p>
+            <ul>
+                <li><strong>Expo:</strong> Umoznuje funkcnost aplikacie a dorucovanie push notifikacii</li>
+                <li><strong>Supabase:</strong> Bezpecna backendova databaza pre spravy z kontaktneho formulara a tokeny push notifikacii</li>
+                <li><strong>Google Calendar:</strong> Nacitanie udajov o udalostiach len na citanie</li>
+                <li><strong>Cloudflare:</strong> Dorucovanie obsahu a bezpecnost</li>
+                <li><strong>WordPress:</strong> Nacitanie sprav a obsahu len na citanie</li>
+            </ul>
+            <p>Kazda sluzba tretej strany ma vlastne podmienky pouzivania a zasady ochrany osobnych udajov a mozu sa na vas vztahovat aj ich podmienky. Poskytovatel sluzby odporuca oboznamit sa s tymito dokumentmi: Expo Terms of Service, Supabase Terms, Google Calendar Terms, Cloudflare Terms, WordPress.com Terms.</p>
+            <p>Poskytovatel sluzby nezodpoveda za obsah, zasady ani postupy sluzieb tretich stran a nepodporuje ich.</p>
+
+            <h3>Presnost informacii a vylucenie zodpovednosti</h3>
+            <p>Hoci sa poskytovatel sluzby snazi zabezpecit, aby bola aplikacia vzdy aktualna a presna, spoliaha sa na tretie strany pri poskytovani informacii. Poskytovatel sluzby neprebera zodpovednost za:</p>
+            <ul>
+                <li>akukolvek skodu, priamu alebo nepriamu, vyplyvajucu z dovery v obsah alebo funkcnost aplikacie</li>
+                <li>nepresnosti alebo opomenutia v informaciach poskytovanych prostrednictvom aplikacie</li>
+                <li>obsah alebo sluzby tretich stran integrovane v aplikacii</li>
+                <li>prerusenia, oneskorenia alebo nedostupnost aplikacie</li>
+                <li>akekolvek skody vzniknute pouzivanim alebo neschopnostou pouzivat aplikaciu</li>
+            </ul>
+            <p>Toto vylucenie zodpovednosti sa uplatnuje v maximalnom rozsahu povolenom zakonom, vratane skod za usly zisk, stratu udajov alebo stratu moznosti pouzivania.</p>
+
+            <h3>Spracuvanie udajov a ochrana osobnych udajov</h3>
+            <p>Aplikacia spracuva osobne udaje tak, ako je popisane v nasich Zasadach ochrany osobnych udajov. Pouzivanim aplikacie suhlasitte so spracuvanim udajov v sulade so Zasadami ochrany osobnych udajov. Dlzku uchovavania osobnych udajov podrobne upravuju Zasady ochrany osobnych udajov.</p>
+            <p>Vase prava (podla GDPR a zakona c. 18/2018 Z. z.):</p>
+            <ul>
+                <li><strong>Pristup:</strong> Poziadat o kopiu vasich osobnych udajov</li>
+                <li><strong>Oprava:</strong> Poziadat o opravu nepresnych udajov</li>
+                <li><strong>Vymazanie:</strong> Poziadat o vymazanie vasich udajov (&bdquo;pravo byt zabudnuty&ldquo;)</li>
+                <li><strong>Obmedzenie:</strong> Obmedzit sposob, akym spracuvame vase udaje</li>
+                <li><strong>Namietka:</strong> Namietat proti urcitym cinnostiam spracuvania</li>
+                <li><strong>Odvolanie suhlasu:</strong> Kedykolvek odvolat suhlas so spracuvanim udajov</li>
+            </ul>
+            <p>Na uplatnenie tychto prav alebo v otazkach ochrany osobnych udajov napiste na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> alebo si otvorte Zasady ochrany osobnych udajov v nastaveniach aplikacie.</p>
+            <p>Pre pouzivatelov na Slovensku mate tiez pravo podat staznost na Urad na ochranu osobnych udajov SR.</p>
+
+            <h3>Ochrana sukromia a ochrana deti</h3>
+            <p>Tato aplikacia je urcena pre pouzivatelov vsetkych vekovych kategorii, no sukromie deti berieme vazne. Poskytovatel sluzby nezhromazduje vedome osobne udaje specificky od deti. Akekolvek osobne udaje odoslane prostrednictvom aplikacie (napriklad cez kontaktny formular) by mali byt poskytnute so vedomim rodica alebo zakonneho zastupcu tam, kde je to na mieste. Vsetky zakladne funkcie — vratane Sprav, Modlitebnika, Kalendara a Galerie — su pristupne bez poskytnutia akychkolvek osobnych udajov.</p>
+            <p>Necielime marketing ani sluzby na deti a vedome ich neoslovujeme so ziadostou o osobne udaje.</p>
+            <p>Ak ste rodic alebo zakonny zastupca a domnievate sa, ze vase dieta poskytlo osobne udaje tejto aplikacii, okamzite nas kontaktujte na <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a>, aby sme mohli tieto udaje z nasich serverov odstranit.</p>
+            <p>Poskytovatel sluzby je zo zakona povinny nahlasit akekolvek podozrenie zo zneuzitia alebo zneuzivania maloletych prislusnym organom.</p>
+
+            <h3>Ukoncenie pristupu</h3>
+            <p>Poskytovatel sluzby moze kedykolvek bez predchadzajuceho upozornenia ukoncit vas pristup k aplikacii, ak:</p>
+            <ul>
+                <li>porusite tieto podmienky pouzivania</li>
+                <li>sa dopustite protipravneho konania</li>
+                <li>porusite platne zakony alebo predpisy</li>
+                <li>sa pokusite ziskat neopravneny pristup k aplikacii alebo suvisiacim systemom</li>
+            </ul>
+            <p>Po ukonceni:</p>
+            <ul>
+                <li>vase prava a licencie udelene podla tychto podmienok okamzite zanikaju</li>
+                <li>musite prestat pouzivat aplikaciu</li>
+                <li>musite na ziadost aplikaciu zo zariadenia odstranit</li>
+                <li>mozu byt vymazane akekolvek udaje suvisiace s vasim pouzivanim</li>
+            </ul>
+
+            <h3>Zmeny podmienok pouzivania</h3>
+            <p>Poskytovatel sluzby moze tieto podmienky pouzivania kedykolvek aktualizovat. Odporucame vam pravidelne si tuto stranku precitat kvoli zmenam. Aktualizacie budu zverejnene na tejto stranke a v aplikacii s jasne uvedenym datumom ucinnosti.</p>
+            <p>Vase dalsie pouzivanie aplikacie po akychkolvek zmenach predstavuje suhlas s novymi podmienkami.</p>
+            <p><span class="effective-date">Aktualny datum ucinnosti: 28. marec 2026</span></p>
+
+            <h3>Rozhodne pravo a prislusnost sudov</h3>
+            <p>Tieto podmienky pouzivania sa riadia pravnym poriadkom Slovenskej republiky. Akekolvek spory vyplyvajuce z tychto podmienok alebo s nimi suvisiace podliehaju prislusnosti sudov Slovenskej republiky.</p>
+
+            <h3>Oddelitelnost</h3>
+            <p>Ak sa ktorekolvek ustanovenie tychto podmienok pouzivania povazuje za neplatne alebo nevymahatelne, ostatne ustanovenia zostavaju v plnej platnosti a ucinnosti. Neplatne ustanovenie sa upravi v najmensom potrebnom rozsahu tak, aby bolo platne a vymahatelne.</p>
+
+            <h3>Kontaktne udaje</h3>
+            <p>V pripade otazok, obav alebo uplatnenia prav tykajucich sa tychto podmienok pouzivania alebo nasich postupov pri spracuvani udajov nas kontaktujte:</p>
+            <p>
+                Regnum Christi Slovensko<br>
+                Obcianske zdruzenie RCSK<br>
+                Sidlo: Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves<br>
+                ICO: 53163966<br>
+                E-mail: <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a><br>
+                Webova stranka: <a href="https://www.regnumchristi.sk">www.regnumchristi.sk</a>
+            </p>
+            <p><span class="effective-date">Posledna aktualizacia: 28. marec 2026</span></p>
+            <p>Pouzivanim aplikacie Regnum Christi Slovensko potvrdzujete, ze ste si precitali tieto podmienky pouzivania, porozumeli im a suhlasitte, ze vas viazu.</p>
+        </section>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- TERMS AND CONDITIONS — ENGLISH                                -->
+    <!-- ============================================================ -->
+    <div id="terms-en" class="doc-section">
+        <section class="policy-section">
+            <span class="doc-label">English version</span>
+            <h2>Terms and Conditions</h2>
+
+            <p>These Terms and Conditions apply to the Regnum Christi Slovensko application (hereinafter referred to as the &ldquo;Application&rdquo;) for mobile devices, which was developed by Obcianske zdruzenie RCSK (hereinafter referred to as the &ldquo;Service Provider&rdquo;). This service is provided &ldquo;AS IS&rdquo; as a free, non-commercial service.</p>
+
+            <h3>Identification of the Service Provider</h3>
+            <p>Obcianske zdruzenie RCSK, with its registered office at Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves, Slovakia, identification number (ICO): 53163966.</p>
+
+            <h3>Acceptance of Terms</h3>
+            <p>By downloading or using the Application, you automatically agree to these Terms and Conditions. We strongly advise that you read and understand these terms in their entirety before using the Application. If you do not agree to these terms, please do not use the Application.</p>
+            <p>These Terms and Conditions should be read in conjunction with our Privacy Policy, which governs how we handle your personal information and is available within the Application and on our website.</p>
+
+            <h3>Intellectual Property Rights</h3>
+            <p>All intellectual property rights, including but not limited to trademarks, copyrights, database rights, and other proprietary content related to the Application, remain the exclusive property of the Service Provider.</p>
+            <p>You agree that:</p>
+            <ul>
+                <li>Unauthorized copying, modification, or redistribution of the Application or any part thereof is strictly prohibited.</li>
+                <li>You may not extract, reverse engineer, or attempt to obtain the source code of the Application.</li>
+                <li>You may not translate the Application into other languages or create derivative versions without explicit written permission.</li>
+                <li>You may not use the Application's trademarks, logos, or branding in any manner without prior consent.</li>
+            </ul>
+            <p>Violations of these intellectual property rights may result in legal action and immediate termination of your access to the Application.</p>
+
+            <h3>Acceptable Use</h3>
+            <p>You agree to use the Application solely for lawful purposes and in accordance with these Terms and Conditions. Specifically, you agree not to:</p>
+            <ul>
+                <li>Use the Application in any way that violates applicable laws or regulations.</li>
+                <li>Engage in any conduct that restricts or inhibits anyone's use or enjoyment of the Application.</li>
+                <li>Attempt to gain unauthorized access to the Application or related systems.</li>
+                <li>Use the Application to transmit any offensive, defamatory, obscene, or otherwise objectionable material.</li>
+                <li>Interfere with or disrupt the normal operation of the Application or its associated services.</li>
+            </ul>
+
+            <h3>Service Modifications and Availability</h3>
+            <p>The Service Provider is committed to continuously improving the Application and reserves the right to:</p>
+            <ul>
+                <li>Modify the Application's features, functionality, or content at any time without prior notice.</li>
+                <li>Temporarily suspend the Application for maintenance, updates, or security purposes.</li>
+                <li>Introduce paid services or additional features in the future (any changes to pricing will be clearly communicated in advance).</li>
+                <li>Cease providing the Application entirely, with or without prior notice.</li>
+            </ul>
+            <p>By using the Application, you agree to accept all updates when offered. Updated versions may be necessary for continued compatibility with your device's operating system.</p>
+
+            <h3>Device Security and User Responsibility</h3>
+            <p>The Application requires:</p>
+            <ul>
+                <li>A compatible mobile device running iOS or Android.</li>
+                <li>An active internet connection (Wi-Fi or mobile data).</li>
+            </ul>
+            <p>You agree to:</p>
+            <ul>
+                <li>Maintain the security and confidentiality of your device access.</li>
+                <li>Not jailbreak or root your device, which involves removing software restrictions imposed by the official operating system. Such actions may expose your device to malware, viruses, and malicious programs, compromise security features, and prevent the Application from functioning correctly.</li>
+                <li>Keep your device software updated.</li>
+                <li>Maintain adequate device battery charge to use the Application.</li>
+                <li>Accept responsibility for any charges imposed by your mobile network provider for data usage.</li>
+            </ul>
+            <p>The Service Provider is not responsible for:</p>
+            <ul>
+                <li>The Application not functioning at full capacity due to lack of internet connectivity or exhausted data allowance.</li>
+                <li>Charges incurred from your mobile network provider for data usage, roaming fees, or other carrier-related costs.</li>
+                <li>Loss of battery charge or device malfunction.</li>
+                <li>Third-party charges or fees related to using the Application.</li>
+            </ul>
+            <p>If you are not the account holder for your device, you confirm you have obtained permission from the account holder to use the Application.</p>
+
+            <h3>Third-Party Services and Content</h3>
+            <p>The Application utilizes third-party infrastructure providers that act as data processors. These include:</p>
+            <ul>
+                <li><strong>Expo:</strong> Facilitates app functionality and push notification delivery.</li>
+                <li><strong>Supabase:</strong> Secure backend database for contact messages and push notification tokens.</li>
+                <li><strong>Google Calendar:</strong> Fetch read-only event data.</li>
+                <li><strong>Cloudflare:</strong> Content delivery and security.</li>
+                <li><strong>WordPress:</strong> Fetch read-only news and content data.</li>
+            </ul>
+            <p>Each third-party service has its own Terms of Service and Privacy Policy, and you may be subject to their terms as well. The Service Provider recommends reviewing these policies: Expo Terms of Service, Supabase Terms, Google Calendar Terms, Cloudflare Terms, WordPress.com Terms.</p>
+            <p>The Service Provider is not responsible for the content, policies, or practices of third-party services and does not endorse them.</p>
+
+            <h3>Information Accuracy and Liability Disclaimer</h3>
+            <p><strong>Important limitation of liability:</strong> While the Service Provider strives to ensure the Application is updated and accurate at all times, it relies on third parties to provide information. The Service Provider accepts no liability for:</p>
+            <ul>
+                <li>Any loss, direct or indirect, resulting from reliance on the Application's content or functionality.</li>
+                <li>Inaccuracies or omissions in information provided through the Application.</li>
+                <li>Third-party content or services integrated within the Application.</li>
+                <li>Interruptions, delays, or unavailability of the Application.</li>
+                <li>Any damages arising from your use or inability to use the Application.</li>
+            </ul>
+            <p>This disclaimer applies to the maximum extent permitted by law, including but not limited to damages for loss of profits, data, or use.</p>
+
+            <h3>Data Processing and Privacy</h3>
+            <p>The Application processes personal data as described in our Privacy Policy. By using the Application, you consent to data processing practices outlined in the Privacy Policy. <strong>The retention periods for personal data are set out in detail in the Privacy Policy.</strong></p>
+            <p><strong>Your rights:</strong> You have the following rights regarding your personal data (under GDPR and Slovak Act No. 18/2018 Coll.):</p>
+            <ul>
+                <li><strong>Access:</strong> Request a copy of your personal data.</li>
+                <li><strong>Rectification:</strong> Request correction of inaccurate data.</li>
+                <li><strong>Erasure:</strong> Request deletion of your data (&ldquo;Right to be forgotten&rdquo;).</li>
+                <li><strong>Restriction:</strong> Limit how we process your data.</li>
+                <li><strong>Objection:</strong> Object to certain processing activities.</li>
+                <li><strong>Withdraw consent:</strong> Withdraw consent for data processing at any time.</li>
+            </ul>
+            <p>To exercise these rights or for privacy concerns, email <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> or access the Privacy Policy in the Application settings.</p>
+            <p>For Slovak users, you also have the right to lodge a complaint with the Office for Personal Data Protection of the Slovak Republic (Urad na ochranu osobnych udajov SR).</p>
+
+            <h3>Children's Privacy and Protection</h3>
+            <p>This Application is designed for users of all ages, but we take children's privacy seriously. The Service Provider does not knowingly collect personal data specifically from children. Any personal data submitted through the Application (for example, via the contact form) should be provided with a parent or legal guardian's awareness where applicable. All core features &mdash; including News, Prayerbook, Calendar, and Gallery &mdash; can be accessed without providing any personal data.</p>
+            <p>We do not target our marketing or services toward children, nor do we knowingly solicit their personal information.</p>
+            <p>If you are a parent or guardian and believe your child has provided personal information to this Application, please contact us immediately at <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> so we can remove that data from our servers.</p>
+            <p>The Service Provider is required by law to report any suspected abuse or exploitation of minors to the appropriate authorities.</p>
+
+            <h3>Termination of Access</h3>
+            <p>The Service Provider may terminate your access to the Application at any time without prior notice if you:</p>
+            <ul>
+                <li>Violate these Terms and Conditions.</li>
+                <li>Engage in unlawful conduct.</li>
+                <li>Violate applicable laws or regulations.</li>
+                <li>Attempt unauthorized access to the Application or related systems.</li>
+            </ul>
+            <p>Upon termination:</p>
+            <ul>
+                <li>Your rights and licenses granted under these terms immediately end.</li>
+                <li>You must cease using the Application.</li>
+                <li>You must delete the Application from your device if requested.</li>
+                <li>Any data associated with your use may be deleted.</li>
+            </ul>
+
+            <h3>Changes to Terms and Conditions</h3>
+            <p>The Service Provider may update these Terms and Conditions at any time. You are advised to review this page regularly for changes. Updates will be posted on this page and within the Application, with the effective date clearly indicated.</p>
+            <p>Your continued use of the Application following any changes constitutes your acceptance of the new terms.</p>
+            <p><span class="effective-date">Current effective date: March 28, 2026</span></p>
+
+            <h3>Governing Law and Jurisdiction</h3>
+            <p>These Terms and Conditions are governed by the laws of the Slovak Republic. Any disputes arising from or relating to these terms shall be subject to the jurisdiction of the courts of the Slovak Republic.</p>
+
+            <h3>Severability</h3>
+            <p>If any provision of these Terms and Conditions is found to be invalid or unenforceable, the remaining provisions shall continue in full force and effect. The invalid provision shall be modified to the minimum extent necessary to make it valid and enforceable.</p>
+
+            <h3>Contact Information</h3>
+            <p>For questions, concerns, or to exercise your rights regarding these Terms and Conditions or our data practices, please contact:</p>
+            <p>
+                Regnum Christi Slovensko<br>
+                Obcianske zdruzenie RCSK<br>
+                Registered office: Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves, Slovakia<br>
+                Identification number (ICO): 53163966<br>
+                Email: <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a><br>
+                Website: <a href="https://www.regnumchristi.sk">www.regnumchristi.sk</a>
+            </p>
+            <p><span class="effective-date">Last updated: March 28, 2026</span></p>
+            <p>By using the Regnum Christi Slovensko Application, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>
+        </section>
+    </div>
+
 </main>
 
 <footer>
@@ -379,6 +749,43 @@
     Obcianske zdruzenie RCSK | Ludovita Fullu 20, 841 05 Bratislava-Karlova Ves<br>
     ICO: 53163966 | <a href="mailto:info@regnumchristi.sk">info@regnumchristi.sk</a> | <a href="https://www.regnumchristi.sk">www.regnumchristi.sk</a>
 </footer>
+
+<script>
+    function showSection(id) {
+        // Hide all sections
+        document.querySelectorAll('.doc-section').forEach(function(s) {
+            s.classList.remove('active');
+        });
+        // Deactivate all nav buttons
+        document.querySelectorAll('.doc-nav button').forEach(function(b) {
+            b.classList.remove('active');
+        });
+        // Show target section
+        var target = document.getElementById(id);
+        if (target) {
+            target.classList.add('active');
+        }
+        // Activate the clicked button
+        var buttons = document.querySelectorAll('.doc-nav button');
+        var map = {'privacy-sk': 0, 'privacy-en': 1, 'terms-sk': 2, 'terms-en': 3};
+        if (typeof map[id] !== 'undefined') {
+            buttons[map[id]].classList.add('active');
+        }
+        // Scroll to top of main content
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        // Update URL hash
+        history.replaceState(null, '', '#' + id);
+    }
+
+    // Handle deep linking via URL hash
+    (function() {
+        var hash = window.location.hash.replace('#', '');
+        var valid = ['privacy-sk', 'privacy-en', 'terms-sk', 'terms-en'];
+        if (valid.indexOf(hash) !== -1) {
+            showSection(hash);
+        }
+    })();
+</script>
 
 </body>
 </html>
